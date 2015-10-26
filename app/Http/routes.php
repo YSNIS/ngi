@@ -11,13 +11,6 @@
 |
 */
 
-// Getting and Creating Henchmen
-Route::get('/henchmen', 'HenchmenController@getHenchmen');
-Route::post('/henchmen/{name}', 'HenchmenController@createHenchmen');
-Route::delete('/henchmen/{name}', 'HenchmenController@deleteHenchmen');
-
-Route::get('{all}', function($uri)
-{
-    return View::make('layouts.master');
-})->where('all', '.*');
-
+Route::get('/', function () {
+    return view('welcome');
+});
