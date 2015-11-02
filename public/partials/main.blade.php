@@ -14,48 +14,12 @@ function autoResize(id){
 }
 //-->
 </script>
-
-<div class="row">
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
 </div>
-<div class="row">
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
+<div ng-repeat="game in games">
+	<div class="row" ng-if="$index % 3 == 0"></div>
+		<game-thumb game="game" tooltipdir="right" ng-if="$index % 3 != 2"></game-thumb>
+		<game-thumb game="game" tooltipdir="left" ng-if="$index % 3 == 2"></game-thumb>
+	</div ng-if="$index % 3 == 2">
 </div>
-<div class="row">
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
-	<div class="col-md-4">
-		<iframe src="http://gifs.com/embed/yogQ7d" width="100%" height="200px" id="iframe1" marginheight="0" frameborder="0" onLoad="autoResize('iframe1');"></iframe>
-	</div>
+<div class="test-padding">
 </div>

@@ -1,4 +1,4 @@
-var app = angular.module("app", ['ngRoute'], function($interpolateProvider){
+var app = angular.module("app", ['ngRoute', 'ui.bootstrap'], function($interpolateProvider){
 	$interpolateProvider.startSymbol('[[');
 	$interpolateProvider.endSymbol(']]');
 });

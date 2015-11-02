@@ -1,2 +1,31 @@
+/************************************
+Tooltip Styling
+************************************/
+.tooltip {
+  opacity: 1 !important;
+}
+.tooltip-arrow {
+  visibility: hidden;
+}
+.tooltip.right .tooltip-arrow {
+  border-right-color: tomato;
+}
+.tooltip.left .tooltip-arrow {
+  border-left-color: tomato;
+}
+.tooltip-inner {
+  background: tomato;
+  height: auto;
+  width: auto;
+  max-width: none;
+}
+.game-thumb {
+  height: 215px;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px 0;
+  background: green;
+  border: 1px solid black;
+}
 
 /*# sourceMappingURL=app.css.map */

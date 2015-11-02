@@ -1,0 +1,24 @@
+/************************************
+Tooltip Styling
+************************************/
+@tooltip-bg: tomato;
+
+.tooltip {
+	opacity: 1 !important;
+}
+.tooltip-arrow {
+	visibility: hidden;
+}
+.tooltip.right .tooltip-arrow {
+	border-right-color: @tooltip-bg;
+}
+.tooltip.left .tooltip-arrow {
+	border-left-color: @tooltip-bg;
+}
+
+.tooltip-inner {
+	background: @tooltip-bg;
+	height: auto;
+	width: auto;
+	max-width: none;
+}
