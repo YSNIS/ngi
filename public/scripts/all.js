@@ -10,7 +10,22 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 		}
 	);
 }]);
-app.controller("MainController", ['$scope', '$http', '$q', function($scope, $http, $q) {
+app.controller('GameModalController', function ($scope, $uibModalInstance, game) {
+
+  $scope.game = game;
+
+  console.log(game);
+  
+  $scope.ok = function () {
+    $uibModalInstance.close();
+  };
+
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+
+});
+app.controller("MainController", ['$scope', '$http', '$q', '$uibModal', function($scope, $http, $q, $uibModal) {
 	
 	$scope.games = [
 	{
@@ -95,8 +110,12 @@ app.controller("MainController", ['$scope', '$http', '$q', function($scope, $htt
 	},
 	];
 
+
+
+
+
 }]);
-app.directive('gameThumb', [ '$sce', function($sce) {
+app.directive('gameThumb', [ '$sce', '$uibModal', function($sce, $uibModal) {
 	
 	return {
 		
@@ -112,9 +131,8 @@ app.directive('gameThumb', [ '$sce', function($sce) {
 			/*************************
 			Tooltip
 			*************************/		
-
+			scope.showTooltip = true;
 			scope.tooltip_gif_url = $sce.trustAsResourceUrl(scope.game.embed);
-
 			var initial_dir = attrs.tooltipdir;
 			var bot_top_limit = 100;
 			var eTop = $(element).offset().top; //get the offset top of the element
@@ -133,10 +151,33 @@ app.directive('gameThumb', [ '$sce', function($sce) {
 					scope.tooltipdir = initial_dir;
 				}
 			});
+
 			// Instantly closes tooltip on leaving element
 			$(element).mouseout(function(){
 				$('.tooltip').hide();
 			});
+
+			scope.open = function () {
+
+				scope.showTooltip = false;
+
+				var modalInstance = $uibModal.open({
+					animation: true,
+					templateUrl: '/partials/game-modal.blade.php',
+					controller: 'GameModalController',
+					size: 'lg',
+					windowClass: 'game-modal',
+					resolve: {
+						game: scope.game,
+					},
+				});
+
+				modalInstance.result.then(function () {
+					console.log('hi');
+					scope.showTooltip = true;
+				});
+
+			}
 
 		},
 		

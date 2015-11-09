@@ -1,4 +1,4 @@
-app.controller("MainController", ['$scope', '$http', '$q', function($scope, $http, $q) {
+app.controller("MainController", ['$scope', '$http', '$q', '$uibModal', function($scope, $http, $q, $uibModal) {
 	
 	$scope.games = [
 	{
@@ -82,5 +82,9 @@ app.controller("MainController", ['$scope', '$http', '$q', function($scope, $htt
 		consoles : ['pc', 'ps4', 'xbox1', 'mac'],
 	},
 	];
+
+
+
+
 
 }]);
