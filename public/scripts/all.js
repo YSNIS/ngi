@@ -21,7 +21,7 @@ app.controller('GameModalController', function ($scope, $uibModalInstance, game)
   };
 
   $scope.cancel = function () {
-    $uibModalInstance.dismiss('cancel');
+    $uibModalInstance.close(console.log('hi'));
   };
 
 });
@@ -159,11 +159,12 @@ app.directive('gameThumb', [ '$sce', '$uibModal', function($sce, $uibModal) {
 
 			scope.open = function () {
 
-				scope.showTooltip = false;
+				// scope.showTooltip = false;
+				$('.tooltip-inner').parent().hide();
 
 				var modalInstance = $uibModal.open({
 					animation: true,
-					templateUrl: '/partials/game-modal.blade.php',
+					templateUrl: './partials/game-modal.blade.php',
 					controller: 'GameModalController',
 					size: 'lg',
 					windowClass: 'game-modal',
@@ -172,10 +173,11 @@ app.directive('gameThumb', [ '$sce', '$uibModal', function($sce, $uibModal) {
 					},
 				});
 
-				modalInstance.result.then(function () {
-					console.log('hi');
-					scope.showTooltip = true;
-				});
+				modalInstance.result.then(function (selectedItem) {
+			      $scope.selected = selectedItem;
+			    }, function () {
+			      scope.showTooltip = true;
+			    });
 
 			}
 

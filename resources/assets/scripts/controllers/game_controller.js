@@ -9,7 +9,7 @@ app.controller('GameModalController', function ($scope, $uibModalInstance, game)
   };
 
   $scope.cancel = function () {
-    $uibModalInstance.dismiss('cancel');
+    $uibModalInstance.close(console.log('hi'));
   };
 
 });
