@@ -10,6 +10,20 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 		}
 	);
 }]);
+app.directive('gameFilters', [ '$sce', '$uibModal', function($sce, $uibModal) {
+	
+	return {
+		
+		templateUrl: 'partials/filter.blade.php',
+		restrict: 'E',
+		link: function(scope, element, attrs, tabsCtrl) {
+			$('.dropdown-menu').click(function(event){
+			     event.stopPropagation();
+			 });
+		},
+		
+	};
+}]);
 app.directive('gameThumb', [ '$sce', '$uibModal', function($sce, $uibModal) {
 	
 	return {
@@ -203,11 +217,8 @@ app.controller("MainController", ["$scope", "$http", "$q", "$uibModal", function
 
 		if (hasConsole && hasGenre) {
 			return game;
-		}
-	    
-	}
-
-
+		} 
+	} /* END OF GAME FILTERING */
 
 
 }]);

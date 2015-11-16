@@ -27,5 +27,8 @@ Tooltip Styling
   background: green;
   border: 1px solid black;
 }
+.game-filters .dropdown-menu label {
+  width: 100%;
+}
 
 /*# sourceMappingURL=app.css.map */

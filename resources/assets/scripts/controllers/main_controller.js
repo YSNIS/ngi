@@ -106,11 +106,8 @@ app.controller("MainController", ["$scope", "$http", "$q", "$uibModal", function
 
 		if (hasConsole && hasGenre) {
 			return game;
-		}
-	    
-	}
-
-
+		} 
+	} /* END OF GAME FILTERING */
 
 
 }]);
