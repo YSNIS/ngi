@@ -16,7 +16,7 @@ app.directive('gameThumb', [ '$sce', '$uibModal', function($sce, $uibModal) {
 			*************************/		
 			scope.showTooltip = true;
 			scope.isMobile = false;
-			scope.tooltip_image = ".public/images/tooltips/" + scope.game.embed;
+			scope.tooltip_image = "./images/tooltips/" + scope.game.embed;
 			var initial_dir = attrs.tooltipdir;
 			var bot_top_limit = 100;
 			var eTop = $(element).offset().top; //get the offset top of the element
