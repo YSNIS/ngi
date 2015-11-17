@@ -5,8 +5,33 @@
 	padding: 10px 0;
 	background: green;
 	border: 1px solid black;
-
+	.info, .mobile-tooltip-info {
+		visibility: hidden;
+	}
+	&:hover {
+		&:after {
+			content: "Click For More Info";
+			display: block;
+		}
+	} 
 }
-.mobile-gif {
-	// display: none;
+
+
+/* Portrait and Landscape */
+@media only screen 
+	and (min-device-width: 414px) 
+	and (max-device-width: 736px) 
+	and (-webkit-min-device-pixel-ratio: 3) { 
+	// {
+
+		.game-thumb {
+			width: 60%;
+			display: inline-block;
+			&:hover {
+				&:after {
+					content: "Press Again For More Info";
+					display: block;
+				}
+			}
+		}
 }

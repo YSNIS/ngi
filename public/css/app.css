@@ -8,14 +8,19 @@ Tooltip Styling
   visibility: hidden;
 }
 .tooltip.right .tooltip-arrow {
-  border-right-color: tomato;
+  border-right-color: rgba(0, 0, 0, 0);
 }
 .tooltip.left .tooltip-arrow {
-  border-left-color: tomato;
+  border-left-color: rgba(0, 0, 0, 0);
 }
 .tooltip-inner {
-  background: tomato;
+  background: rgba(0, 0, 0, 0);
   max-width: none;
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  .tooltip-inner video {
+    width: 250px;
+  }
 }
 .game-thumb {
   height: 215px;
@@ -24,6 +29,25 @@ Tooltip Styling
   padding: 10px 0;
   background: green;
   border: 1px solid black;
+}
+.game-thumb .info,
+.game-thumb .mobile-tooltip-info {
+  visibility: hidden;
+}
+.game-thumb:hover:after {
+  content: "Click For More Info";
+  display: block;
+}
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  .game-thumb {
+    width: 60%;
+    display: inline-block;
+  }
+  .game-thumb:hover:after {
+    content: "Press Again For More Info";
+    display: block;
+  }
 }
 .game-filters .dropdown-menu label {
   width: 100%;

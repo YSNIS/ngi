@@ -18,6 +18,7 @@ app.directive('gameThumb', [ '$sce', '$uibModal', function($sce, $uibModal) {
 			scope.gif_poster = "//" + scope.game.embed + ".jpg";
 			scope.gif_webm = "//" + scope.game.embed + ".webm"; 
 			scope.gif_mp4 = "//" + scope.game.embed + ".mp4";
+			scope.gif_poster = $sce.trustAsResourceUrl(scope.gif_poster);
 			scope.gif_webm = $sce.trustAsResourceUrl(scope.gif_webm);
 			scope.gif_mp4 = $sce.trustAsResourceUrl(scope.gif_mp4);
 			var initial_dir = attrs.tooltipdir;
@@ -37,6 +38,10 @@ app.directive('gameThumb', [ '$sce', '$uibModal', function($sce, $uibModal) {
 				} else {
 					scope.tooltipdir = initial_dir;
 				}
+				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+					scope.tooltipdir = "right";
+				}
+
 			});
 
 			// Instantly closes tooltip on leaving element

@@ -1,7 +1,7 @@
 /************************************
 Tooltip Styling
 ************************************/
-@tooltip-bg: tomato;
+@tooltip-bg: rgba(0,0,0,0);
 
 .tooltip {
 	opacity: 1 !important;
@@ -21,4 +21,17 @@ Tooltip Styling
 	// height: auto;
 	// width: auto;
 	max-width: none;
+}
+
+@media only screen 
+	and (min-device-width: 414px) 
+	and (max-device-width: 736px) 
+	and (-webkit-min-device-pixel-ratio: 3) { 
+	// {
+
+		.tooltip-inner {
+			video {
+				width: 250px;
+			}
+		}
 }
