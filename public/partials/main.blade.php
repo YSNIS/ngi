@@ -1,7 +1,7 @@
 <!-- Filter -->
 <game-filters></game-filters>
 
-<div ng-repeat="game in games | filter:gameFilter:game">
+<div ng-repeat="game in games | filter:gameFilter:game | limitTo: 10">
 	<div class="row" ng-if="$index % 3 == 0"></div>
 		<game-thumb game="game" tooltipdir="right" ng-if="$index % 3 != 2"></game-thumb>
 		<game-thumb game="game" tooltipdir="left" ng-if="$index % 3 == 2"></game-thumb>

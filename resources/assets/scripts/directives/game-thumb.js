@@ -15,7 +15,11 @@ app.directive('gameThumb', [ '$sce', '$uibModal', function($sce, $uibModal) {
 			Tooltip
 			*************************/		
 			scope.showTooltip = true;
-			scope.tooltip_gif_url = $sce.trustAsResourceUrl(scope.game.embed);
+			scope.gif_poster = "//" + scope.game.embed + ".jpg";
+			scope.gif_webm = "//" + scope.game.embed + ".webm"; 
+			scope.gif_mp4 = "//" + scope.game.embed + ".mp4";
+			scope.gif_webm = $sce.trustAsResourceUrl(scope.gif_webm);
+			scope.gif_mp4 = $sce.trustAsResourceUrl(scope.gif_mp4);
 			var initial_dir = attrs.tooltipdir;
 			var bot_top_limit = 100;
 			var eTop = $(element).offset().top; //get the offset top of the element

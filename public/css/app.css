@@ -15,8 +15,6 @@ Tooltip Styling
 }
 .tooltip-inner {
   background: tomato;
-  height: auto;
-  width: auto;
   max-width: none;
 }
 .game-thumb {
