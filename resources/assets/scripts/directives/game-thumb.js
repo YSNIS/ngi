@@ -21,10 +21,14 @@ app.directive('gameThumb', [ '$sce', '$uibModal', function($sce, $uibModal) {
 			scope.gif_poster = $sce.trustAsResourceUrl(scope.gif_poster);
 			scope.gif_webm = $sce.trustAsResourceUrl(scope.gif_webm);
 			scope.gif_mp4 = $sce.trustAsResourceUrl(scope.gif_mp4);
+			scope.isMobile = false;
 			var initial_dir = attrs.tooltipdir;
 			var bot_top_limit = 100;
 			var eTop = $(element).offset().top; //get the offset top of the element
 			var tooltip_bottom = false;
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				scope.isMobile = true;
+			}
 
 			// If the element is within the top limit change the tooltip to bottom
 			// If the element is within the bottom limit change tooltip to top

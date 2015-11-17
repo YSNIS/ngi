@@ -17,11 +17,6 @@ Tooltip Styling
   background: rgba(0, 0, 0, 0);
   max-width: none;
 }
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
-  .tooltip-inner video {
-    width: 250px;
-  }
-}
 .game-thumb {
   height: 215px;
   width: 90%;
@@ -40,13 +35,8 @@ Tooltip Styling
 }
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
-  .game-thumb {
-    width: 60%;
-    display: inline-block;
-  }
   .game-thumb:hover:after {
-    content: "Press Again For More Info";
-    display: block;
+    content: "";
   }
 }
 .game-filters .dropdown-menu label {
