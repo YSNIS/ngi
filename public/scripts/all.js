@@ -64,22 +64,70 @@ app.controller("MainController", ["$scope", "$http", "$q", "$uibModal", function
 	[
 		{
 			name : "Overwatch",
-			embed: "i.imgur.com/6n2XNiX",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
 			consoles : ["pc", "ps4", "xbox1"],
 			genres: ["fps"],
 		}, 
-		{
-			name : "Rime Crime",
-			embed: "i.imgur.com/6n2XNiX",
-			consoles : ["pc"],
-			genres: ["rpg"],
-		},
-		{
-			name : "Tim Limmer",
-			embed: "i.imgur.com/6n2XNiX",
-			consoles : ["pc", "ps4", "xbox1", "mac"],
-			genres: ["action/adventure"],
-		},
 	];
 
 	$scope.gameFilter = function(game) {
@@ -169,13 +217,8 @@ app.directive('gameThumb', [ '$sce', '$uibModal', function($sce, $uibModal) {
 			Tooltip
 			*************************/		
 			scope.showTooltip = true;
-			scope.gif_poster = "//" + scope.game.embed + ".jpg";
-			scope.gif_webm = "//" + scope.game.embed + ".webm"; 
-			scope.gif_mp4 = "//" + scope.game.embed + ".mp4";
-			scope.gif_poster = $sce.trustAsResourceUrl(scope.gif_poster);
-			scope.gif_webm = $sce.trustAsResourceUrl(scope.gif_webm);
-			scope.gif_mp4 = $sce.trustAsResourceUrl(scope.gif_mp4);
 			scope.isMobile = false;
+			scope.tooltip_image = "/images/tooltips/" + scope.game.embed;
 			var initial_dir = attrs.tooltipdir;
 			var bot_top_limit = 100;
 			var eTop = $(element).offset().top; //get the offset top of the element

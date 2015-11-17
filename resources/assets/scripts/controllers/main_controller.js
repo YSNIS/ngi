@@ -37,22 +37,70 @@ app.controller("MainController", ["$scope", "$http", "$q", "$uibModal", function
 	[
 		{
 			name : "Overwatch",
-			embed: "i.imgur.com/6n2XNiX",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
+			consoles : ["pc", "ps4", "xbox1"],
+			genres: ["fps"],
+		},
+		{
+			name : "Overwatch",
+			embed: "overwatch.gif",
 			consoles : ["pc", "ps4", "xbox1"],
 			genres: ["fps"],
 		}, 
-		{
-			name : "Rime Crime",
-			embed: "i.imgur.com/6n2XNiX",
-			consoles : ["pc"],
-			genres: ["rpg"],
-		},
-		{
-			name : "Tim Limmer",
-			embed: "i.imgur.com/6n2XNiX",
-			consoles : ["pc", "ps4", "xbox1", "mac"],
-			genres: ["action/adventure"],
-		},
 	];
 
 	$scope.gameFilter = function(game) {
