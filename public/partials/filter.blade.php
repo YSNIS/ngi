@@ -26,7 +26,27 @@
                         <li ng-repeat="genre in genres"><label class=""><input type="checkbox" ng-checked="genre.checked" ng-model="genre.checked" /> [[ genre.name ]]</label></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Release <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><label class=""><input type="checkbox" ng-model="released" /> Released</label></li>
+                        <li><label class=""><input type="checkbox" ng-model="unreleased" /> Unreleased</label></li>
+                    </ul>
+                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
+    <tags-input
+        ng-model="tags" 
+        add-from-autocomplete-only="true"
+        replace-spaces-with-dashes="false"
+        add-on-paste="true">    
+        <auto-complete 
+            load-on-focus="true"
+            load-on-empty="true"
+            min-length="0"
+            source="loadTags($query)">
+        </auto-complete>
+    </tags-input>
+    <input checked type="checkbox" ng-model="strictSearch">Strict
 </nav>
