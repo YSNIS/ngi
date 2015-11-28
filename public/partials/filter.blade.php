@@ -40,7 +40,8 @@
         ng-model="tags" 
         add-from-autocomplete-only="true"
         replace-spaces-with-dashes="false"
-        add-on-paste="true">    
+        add-on-paste="true"
+        class="col-md-6">    
         <auto-complete 
             load-on-focus="true"
             load-on-empty="true"
@@ -48,5 +49,5 @@
             source="loadTags($query)">
         </auto-complete>
     </tags-input>
-    <input checked type="checkbox" ng-model="strictSearch">Strict
+    <input type="checkbox" ng-model="strictSearch">Strict
 </nav>

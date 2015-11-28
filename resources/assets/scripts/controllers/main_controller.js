@@ -3,7 +3,7 @@ app.controller("MainController", ["$scope", "$http", "$q", "$uibModal", "$filter
 	$scope.released = false;
 	$scope.unreleased = false;
 	$scope.gameSort = "release";
-	$scope.strictSearch = "true";
+	$scope.strictSearch = "false";
 	$scope.tags = [];	// List of tags to search by
 
 	// Reminder to hook up to DB
@@ -144,16 +144,16 @@ app.controller("MainController", ["$scope", "$http", "$q", "$uibModal", "$filter
 		}
 
 		/******************
-		Has Tags - (only unreleased or all games)
+		Has Tags - Using Strict or Not Strict Search
 		******************/
-		var tags = []; 
+		var tags = [];
 		var tagFound = [];
 		var foundUndefined = false;
 
 		// Check if there are any tags to search
 		if ($scope.tags.length != 0) {
 			// Strict Search - Matching All Tags
-			if ($scope.strictSearch) {
+			if ($scope.strictSearch == true) {
 				angular.forEach($scope.tags, function(value, key) {
 					tagFound = $filter('filter')(game.tags, value.text, false);
 					tags.push(tagFound[0]);
@@ -166,10 +166,8 @@ app.controller("MainController", ["$scope", "$http", "$q", "$uibModal", "$filter
 				} else {
 					hasTags = true;
 				}
-			}	
-
-			// Non Strict Searching - Matching At Least 1 Tag
-			if (!$scope.strictSearch) {
+			} else {
+				// Non Strict Searching - Matching At Least 1 Tag
 				angular.forEach($scope.tags, function(value, key) {
 					tags += $filter('filter')(game.tags, value.text, false);
 				});
@@ -179,9 +177,8 @@ app.controller("MainController", ["$scope", "$http", "$q", "$uibModal", "$filter
 					hasTags = false;
 				}
 			}
-		} 
-		// If there are no tags to search - just return true
-		else {
+		} else {
+			// If there are no tags to search - just return true
 			hasTags = true;
 		}
 		
