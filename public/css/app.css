@@ -18,20 +18,47 @@ Tooltip Styling
   max-width: none;
 }
 .game-thumb {
-  height: 215px;
-  width: 90%;
-  margin: 10px auto;
-  padding: 10px 0;
-  background: green;
-  border: 1px solid black;
+  width: 100%;
+  margin: 10px 0px;
+  background: black;
+  border-radius: 3px;
+}
+.game-thumb img {
+  width: inherit;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.game-thumb .more-info {
+  display: none;
 }
 .game-thumb .info,
 .game-thumb .mobile-tooltip-info {
   visibility: hidden;
 }
-.game-thumb:hover:after {
-  content: "Click For More Info";
+.game-thumb .game-thumb-layover {
+  width: calc(100% - 30px);
+  height: calc(100% - 20px);
+  position: absolute;
+  top: 10px;
+}
+.game-thumb:hover img {
+  opacity: .5;
+}
+.game-thumb:hover .more-info {
   display: block;
+  position: absolute;
+  color: white;
+  font-size: 22px;
+  width: calc(100% - 30px);
+  top: 10px;
+  height: calc(100% - 20px);
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.game-thumb:hover .more-info p {
+  text-align: center;
+  margin: auto;
 }
 @media only screen and (max-device-width: 1200px) {
   .game-thumb:hover:after {

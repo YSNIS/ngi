@@ -1,9 +1,11 @@
-app.controller("MainController", ["$scope", "$http", "$q", "$uibModal", "$filter", function($scope, $http, $q, $uibModal, $filter) {
+app.controller("MainController", ["$scope", "$http", "$q", "$uibModal", "$filter", "Games",
+	function($scope, $http, $q, $uibModal, $filter, Games) {
 	
 	$scope.released = false;
 	$scope.unreleased = false;
 	$scope.gameSort = "release";
 	$scope.strictSearch = "false";
+	$scope.showTags = false;
 	$scope.tags = [];	// List of tags to search by
 
 	// Reminder to hook up to DB
@@ -49,45 +51,9 @@ app.controller("MainController", ["$scope", "$http", "$q", "$uibModal", "$filter
 		{
 			text: "Single Player Campaign",
 		},
-
 	]
 
-	// Reminder to hook up to DB
-	$scope.games = 
-	[
-		{
-			name : "Lemon Quest",
-			embed: "overwatch.gif",
-			consoles : ["pc", "ps4", "xbox1"],
-			genres: ["fps"],
-			release: '2016-04-21',
-			tags: ["Co-op", "Single Player Campaign"],
-		},
-		{
-			name : "Tim Rimmlesonn's Revenge",
-			embed: "overwatch.gif",
-			consoles : ["pc", "ps4", "xbox1"],
-			genres: ["fps"],
-			release: '2013-04-10',
-			tags: ["Co-op"],
-		},
-		{
-			name : "Ajax Quest",
-			embed: "overwatch.gif",
-			consoles : ["pc", "ps4", "xbox1"],
-			genres: ["rpg"],
-			release: '2015-04-01',
-			tags: ["Co-op Campaign", "Co-op", "Single Player Campaign"],
-		},
-		{
-			name : "Overwatch",
-			embed: "overwatch.gif",
-			consoles : ["pc", "ps4", "xbox1"],
-			genres: ["rpg"],
-			release: '2014-02-01',
-			tags: ["Single Player Campaign"],
-		},
-	];
+	$scope.games = Games.games;
 
 	// Filtering for games 
 	$scope.gameFilter = function(game) {

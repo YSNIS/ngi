@@ -34,6 +34,7 @@
                     </ul>
                 </li>
             </ul>
+            <button type="button" class="btn btn-default navbar-btn" ng-click="showTags = !showTags">Tags</button>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
     <tags-input
@@ -41,7 +42,8 @@
         add-from-autocomplete-only="true"
         replace-spaces-with-dashes="false"
         add-on-paste="true"
-        class="col-md-6">    
+        class="col-md-11"
+        ng-show="showTags">    
         <auto-complete 
             load-on-focus="true"
             load-on-empty="true"

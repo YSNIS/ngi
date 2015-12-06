@@ -1,23 +1,56 @@
 .game-thumb {
-	height: 215px;
-	width: 90%;
-	margin: 10px auto;
-	padding: 10px 0;
-	background: green;
-	border: 1px solid black;
+	width: 100%;
+	margin: 10px 0px;
+	background: black;
+	border-radius: 3px;
+	img {
+	    width: inherit;
+	    border-radius: 3px;
+	    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	}
+	.more-info {
+		display: none;
+	}
 	.info, .mobile-tooltip-info {
 		visibility: hidden;
 	}
+	.game-thumb-layover {
+		width: calc(~'100% - 30px');
+		height: calc(~'100% - 20px');
+		position: absolute;
+		top: 10px;
+	}
 	&:hover {
-		&:after {
-			content: "Click For More Info";
-			display: block;
+		img {
+			opacity: .5;
 		}
+		.more-info {
+			display: block;
+			position: absolute;
+			color: white;
+			font-size: 22px;
+			width: calc(~'100% - 30px');
+			top: 10px;
+			height: calc(~'100% - 20px');
+			display: flex;
+			p {
+				text-align: center;
+				margin: auto;
+			}
+		}
+		// &:after {
+		// 	content: "Click For More Info";
+		// 	position: absolute;
+		// 	color: white;
+		// 	display: block;
+		// }
 	} 
 }
 
-// BROWSER SMALL
-@media (max-width: 991px) {
+// BROWSER Medium
+@media (max-width: 992px) {
 
 }
 
